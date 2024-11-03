@@ -27,7 +27,7 @@ const Features = () => {
     },
   ];
   return (
-    <div id="features" className="py-16 bg-white">
+    <div id="features" className="py-32 bg-white">
       <div className="container mx-auto px-6">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">
