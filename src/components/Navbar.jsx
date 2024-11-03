@@ -13,10 +13,18 @@ const Navbar = () => {
           </div>
 
           <div className="hidden md:flex items-center space-x-8">
-            <ItemNavbar href="#home">Beranda</ItemNavbar>
-            <ItemNavbar href="#feature">Fitur</ItemNavbar>
-            <ItemNavbar href="#flow">Alur</ItemNavbar>
-            <ItemNavbar href="#faq">FAQ</ItemNavbar>
+            <a href="#home" className="text-gray-700 hover:text-blue-900">
+              Beranda
+            </a>
+            <a href="#features" className="text-gray-700 hover:text-blue-900">
+              Fitur
+            </a>
+            <a href="#flow" className="text-gray-700 hover:text-blue-900">
+              Alur
+            </a>
+            <a href="#faq" className="text-gray-700 hover:text-blue-900">
+              FAQ
+            </a>
             <button className="bg-primary text-white px-6 py-2 rounded-lg hover:bg-blue-800 transition-colors">
               Masuk
             </button>
