@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "../components/Navbar";
+import Header from "../components/Header";
 import Hero from "../components/Hero";
 import Features from "../components/Features";
 import Flow from "../components/Flow";
@@ -9,7 +9,7 @@ import Footer from "../components/Footer";
 const LandingPages = () => {
   return (
     <div>
-      <Navbar />
+      <Header />
       <Hero />
       <Features />
       <Flow />
