@@ -1,15 +1,21 @@
-import { useState } from "react";
-import Button from "./Button"
-import ClickedText from "./ClickedText"
+import React, { useState } from "react";
 
 const LoginForm = () => {
+  // Data dummy mahasiswa
+  const dummyUsers = [
+    { nim: "1234567890", password: "123" },
+    { nim: "0987654321", password: "456" },
+    { nim: "1122334455", password: "789" },
+  ];
+
   const [formData, setFormData] = useState({
-    email: "",
+    nim: "",
     password: "",
     remember: false,
   });
 
   const [showPassword, setShowPassword] = useState(false);
+  const [error, setError] = useState("");
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -17,11 +23,30 @@ const LoginForm = () => {
       ...prev,
       [name]: type === "checkbox" ? checked : value,
     }));
+    // Clear error when user types
+    setError("");
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
+
+    // Check if credentials match any dummy user
+    const user = dummyUsers.find(
+      (user) => user.nim === formData.nim && user.password === formData.password
+    );
+
+    if (user) {
+      // Save login state if remember me is checked
+      if (formData.remember) {
+        localStorage.setItem("isLoggedIn", "true");
+        localStorage.setItem("userNIM", formData.nim);
+      }
+
+      // Redirect to dashboard
+      window.location.href = "/dashboard";
+    } else {
+      setError("NIM atau Password salah!");
+    }
   };
 
   return (
@@ -36,25 +61,33 @@ const LoginForm = () => {
           </p>
         </div>
 
+        {error && (
+          <div
+            className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative"
+            role="alert"
+          >
+            <span className="block sm:inline">{error}</span>
+          </div>
+        )}
+
         <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
           <div>
             <label
-              htmlFor="email"
+              htmlFor="nim"
               className="block text-sm font-instrument font-medium text-gray-700"
             >
-              Email address
+              NIM Mahasiswa
             </label>
             <div className="mt-1">
               <input
-                id="email"
-                name="email"
-                type="email"
-                autoComplete="email"
+                id="nim"
+                name="nim"
+                type="text"
                 required
-                value={formData.email}
+                value={formData.nim}
                 onChange={handleChange}
                 className="font-instrument appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
-                placeholder="Enter your email"
+                placeholder="Masukkan NIM anda"
               />
             </div>
           </div>
@@ -75,7 +108,7 @@ const LoginForm = () => {
                 value={formData.password}
                 onChange={handleChange}
                 className="font-instrument appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
-                placeholder="Enter your password"
+                placeholder="Masukkan password"
               />
               <button
                 type="button"
@@ -139,19 +172,27 @@ const LoginForm = () => {
               </label>
             </div>
 
-            <ClickedText color="blue-800" hoverColor="blue-700">
+            <button
+              type="button"
+              className="font-medium text-blue-800 hover:text-blue-700"
+              onClick={() => (window.location.href = "/forgot-password")}
+            >
               Forgot password?
-            </ClickedText>
+            </button>
           </div>
 
           <div>
-            <Button>
+            <button
+              type="submit"
+              className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+            >
               Sign in
-            </Button>
+            </button>
           </div>
         </form>
       </div>
     </div>
   );
 };
+
 export default LoginForm;
