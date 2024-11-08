@@ -5,7 +5,7 @@ import logo from "../assets/logoimage.png";
 const Login = () => {
   return (
     <div className="min-h-screen flex bg-white">
-      <div className="hidden md:flex md:w-1/2 bg-blue-600 p-8 flex-col">
+      <div className="hidden md:flex md:w-1/2 bg-primary p-8 flex-col">
         <div className="flex items-center space-x-2">
           <img src={logo} alt="SISKPTIF Logo" className="w-12 h-12" />
           <span className="text-white text-xl font-bold">SISKPTIF</span>

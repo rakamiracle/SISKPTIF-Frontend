@@ -1,4 +1,10 @@
 import React from "react";
+import {
+  Disclosure,
+  DisclosureButton,
+  DisclosurePanel,
+} from "@headlessui/react";
+import { ChevronDown } from "lucide-react";
 
 const FAQ = () => {
   const faqs = [
@@ -25,25 +31,30 @@ const FAQ = () => {
   ];
 
   return (
-    <div id="faq" className="py-32 bg-white">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            Frequently Asked Questions
-          </h2>
-          <p className="text-gray-600">
-            Temukan jawaban dari pertanyaan yang sering diajukan
-          </p>
-        </div>
-
-        <div className="max-w-3xl mx-auto">
-          {faqs.map((faq, index) => (
-            <div key={index} className="mb-6 p-6 bg-gray-50 rounded-lg">
-              <h3 className="text-lg font-semibold mb-2">{faq.question}</h3>
-              <p className="text-gray-600">{faq.answer}</p>
-            </div>
-          ))}
-        </div>
+    <div id="faq" className="my-32 w-full px-4">
+      <div className="text-center mb-12">
+        <h2 className="text-3xl font-bold text-gray-900 mb-4">
+          FAQ Tentang Pendaftaran Seminar KP
+        </h2>
+        <p className="text-gray-600">
+          Temukan jawaban atas pertanyaan umum terkait proses pendaftaran
+          seminar Kerja Praktik (KP).
+        </p>
+      </div>
+      <div className="mx-auto w-full max-w-4xl divide-y divide-black/20 rounded-xl bg-gray-50">
+        {faqs.map((faq, index) => (
+          <Disclosure as="div" className="p-6" defaultOpen={true} key={index}>
+            <DisclosureButton className="group flex w-full items-center justify-between">
+              <span className="text-md/6 font-semibold text-black group-data-[hover]:text-black/80">
+                {faq.question}
+              </span>
+              <ChevronDown className="h-5 w-5 fill-white/60 group-data-[hover]:fill-white/50 group-data-[open]:rotate-180 transition-transform duration-300" />
+            </DisclosureButton>
+            <DisclosurePanel className="mt-2 text-sm text-black transition-all duration-300 ease-in-out">
+              {faq.answer}
+            </DisclosurePanel>
+          </Disclosure>
+        ))}
       </div>
     </div>
   );

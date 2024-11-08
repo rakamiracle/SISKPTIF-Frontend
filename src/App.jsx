@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import Login from "../src/pages/Login";
 import Dashboard from "../src/pages/mahasiswa/Dashboard";
 import LandingPage from "./pages/LandingPages";
-import Pengajuan from "./pages/mahasiswa/Pengajuan";
+import Pendaftaran from "./pages/mahasiswa/Pendaftaran";
 import Status from "../src/pages/mahasiswa/Status";
-import Pendaftaran from "../src/pages/mahasiswa/Pendaftaran";
-import DashboardLayout from "./components/DashboardLayout";
+import DashboardLayoutMahasiswa from "./components/DashboardLayoutMahasiswa";
+import Persyaratan from "./pages/mahasiswa/Persyaratan";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 const App = () => {
@@ -14,10 +14,10 @@ const App = () => {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/login" element={<Login />} />
-        <Route element={<DashboardLayout />}>
+        <Route element={<DashboardLayoutMahasiswa />}>
           <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/pengajuan" element={<Pengajuan />} />
           <Route path="/pendaftaran" element={<Pendaftaran />} />
+          <Route path="/persyaratan" element={<Persyaratan />} />
           <Route path="/status" element={<Status />} />
         </Route>
       </Routes>

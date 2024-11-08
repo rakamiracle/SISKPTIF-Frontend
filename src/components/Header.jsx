@@ -19,16 +19,36 @@ const Navbar = () => {
           </div>
 
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#home" className="text-gray-700 hover:text-blue-900">
+            <a
+              href="#home"
+              className="relative py-2
+      after:content-[''] after:scale-x-0 after:h-[2px] after:inline-block after:absolute after:bottom-0 after:bg-primary after:transition-all after:duration-[200ms]
+      hover:after:scale-x-50 after:inset-x-0 hover:transition-all hover:duration-[400ms]"
+            >
               Beranda
             </a>
-            <a href="#features" className="text-gray-700 hover:text-blue-900">
+            <a
+              href="#features"
+              className="relative py-2
+      after:content-[''] after:scale-x-0 after:h-[2px] after:inline-block after:absolute after:bottom-0 after:bg-primary after:transition-all after:duration-[200ms]
+      hover:after:scale-x-50 after:inset-x-0 hover:transition-all hover:duration-[400ms]"
+            >
               Fitur
             </a>
-            <a href="#flow" className="text-gray-700 hover:text-blue-900">
+            <a
+              href="#flow"
+              className="relative py-2
+      after:content-[''] after:scale-x-0 after:h-[2px] after:inline-block after:absolute after:bottom-0 after:bg-primary after:transition-all after:duration-[200ms]
+      hover:after:scale-x-50 after:inset-x-0 hover:transition-all hover:duration-[400ms]"
+            >
               Alur
             </a>
-            <a href="#faq" className="text-gray-700 hover:text-blue-900">
+            <a
+              href="#faq"
+              className="relative py-2
+      after:content-[''] after:scale-x-0 after:h-[2px] after:inline-block after:absolute after:bottom-0 after:bg-primary after:transition-all after:duration-[200ms]
+      hover:after:scale-x-50 after:inset-x-0 hover:transition-all hover:duration-[400ms]"
+            >
               FAQ
             </a>
             <button

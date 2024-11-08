@@ -1,29 +1,8 @@
-import React from "react";
-import Sidebar from "../../components/Sidebar";
-import {
-  FaHome,
-  FaPen,
-  FaClipboard,
-  FaFile,
-} from "react-icons/fa";
-import logo from "../../assets/logoimage.png";
 import Card from "../../components/Card";
-import Navbar from "../../components/Navbar";
 
 const Dashboard = () => {
-  const menuItems = [
-    { icon: <FaHome className="w-5 h-5" />, text: "Beranda", active: true },
-    { icon: <FaPen className="w-5 h-5" />, text: "Pengajuan" },
-    { icon: <FaClipboard className="w-5 h-5" />, text: "Pendaftaran" },
-    { icon: <FaFile className="w-5 h-5" />, text: "Status" },
-  ];
 
   const cards = [
-    {
-      title: "Dokumen Pengajuan Seminar KP",
-      description:
-        "Silakan ajukan dokumen untuk validasi kelengkapan dalam pelaksanaan menuju pendaftaran seminar hasil kerja praktik.",
-    },
     {
       title: "Pendaftaran Seminar KP",
       description:

@@ -1,8 +1,11 @@
 import React from 'react'
+import Upload from '../../components/Upload'
 
 const Pengajuan = () => {
   return (
-    <div>Pengajuan</div>
+    <div>
+      Persyaratan
+    </div>
   )
 }
 
