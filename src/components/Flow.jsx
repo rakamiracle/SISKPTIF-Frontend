@@ -36,11 +36,11 @@ const Flow = () => {
           </p>
         </div>
 
-        <div className="flex flex-col md:flex-row justify-between items-start">
+        <div className="flex flex-col items-center md:flex-row justify-between">
           {steps.map((step, index) => (
             <div key={index} className="flex-1 relative mb-8 md:mb-0">
               <div className="flex flex-col items-center">
-                <div className="w-12 h-12 rounded-full bg-blue-900 text-white flex items-center justify-center text-xl font-bold mb-4">
+                <div className="w-12 h-12 rounded-full bg-blue-900 text-white flex items-center justify-center text-xl font-bold mb-4 z-10">
                   {step.number}
                 </div>
                 <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
