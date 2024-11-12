@@ -44,7 +44,7 @@ const LoginForm = () => {
       }
 
       // Redirect to dashboard
-      window.location.href = "/dashboard";
+      window.location.href = "/mahasiswa/dashboard";
     } else {
       setError("NIM atau Password salah!");
     }
