@@ -63,8 +63,8 @@ const Sidebar = ({isOpen}) => {
                     <Link
                         to="/"
                         className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group mb-3">
-                        <LogOut className="h-6 w-6 mr-2"/>
-                        <span>Logout</span>
+                        <LogOut className="h-5 w-5 mr-2"/>
+                        <span className="font-medium">Logout</span>
                     </Link>
                     {/* User */}
                     <div className="flex items-center bg-gray-100 dark:bg-gray-700 rounded-lg px-3 py-2 mt-auto">
