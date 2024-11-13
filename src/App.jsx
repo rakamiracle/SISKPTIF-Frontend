@@ -22,7 +22,7 @@ const App = () => {
                     <Route path="/mahasiswa/dashboard" element={<Dashboard/>}/>
                     <Route path="/mahasiswa/pendaftaran" element={<Pendaftaran/>}/>
                     <Route path="/mahasiswa/persyaratan" element={<Persyaratan/>}/>
-                    <Route path="/mahasiswa/pascaSeminar" element={<PascaSeminar/>}/>
+                    <Route path="/mahasiswa/pasca-seminar" element={<PascaSeminar/>}/>
                     <Route path="/mahasiswa/status" element={<Status/>}/>
                 </Route>
                 <Route path="/pembimbingInstansi/Dashboard" element={<DashboardInstansi/>}/>
