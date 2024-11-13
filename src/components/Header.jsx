@@ -21,7 +21,7 @@ const Navbar = () => {
                 <div className="flex items-center justify-between">
                     <div className="flex items-center">
                         <img src={logo} alt="Logo" className="h-10 w-10 mr-3"/>
-                        <span className="text-xl font-bold text-primary">SISKPTIF</span>
+                        <span className="text-xl font-bold text-primary">SITRACK</span>
                     </div>
 
                     <div className="hidden md:flex items-center space-x-8">
