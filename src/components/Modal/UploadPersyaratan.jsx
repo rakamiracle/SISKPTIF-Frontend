@@ -1,9 +1,9 @@
 import {useState} from "react";
-import Upload from './UploadForm.jsx';
+import Upload from '../UploadForm.jsx';
 import {X} from 'lucide-react';
-import ModalConfirm from './ModalConfirm.jsx';
+import ModalConfirm from './Confirm.jsx';
 
-const ModalUploadPersyaratan = ({isOpen, onClose}) => {
+const UploadPersyaratan = ({isOpen, onClose}) => {
 
     const [showConfirmation, setShowConfirmation] = useState(false);
     const documents = [
@@ -105,4 +105,4 @@ const ModalUploadPersyaratan = ({isOpen, onClose}) => {
     );
 };
 
-export default ModalUploadPersyaratan;
+export default UploadPersyaratan;
