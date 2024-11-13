@@ -1,8 +1,8 @@
 import React from 'react';
-import Upload from './UploadForm.jsx';
+import Upload from '../UploadForm.jsx';
 import {X} from 'lucide-react';
 
-const ModalUploadPascaSeminar = ({ isOpen, onClose }) => {
+const UploadPascaSeminar = ({ isOpen, onClose }) => {
     const documents = [
         {
             title: "Surat Undangan Seminar Hasil KP",
@@ -71,4 +71,4 @@ const ModalUploadPascaSeminar = ({ isOpen, onClose }) => {
     );
 };
 
-export default ModalUploadPascaSeminar;
+export default UploadPascaSeminar;
