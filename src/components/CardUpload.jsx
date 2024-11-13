@@ -1,21 +1,23 @@
 import React from 'react';
-import {ListChecks, Loader, FileX} from 'lucide-react';
+import { ListChecks, Loader, FileX, MoveRight } from 'lucide-react';
 
-const CardPersyaratan = ({number, date, status}) => {
+const CardUpload = ({ number, date, status, onStatusClick }) => {
     const getStatusButton = () => {
         if (status === 'revisi') {
             return (
                 <div
-                    className="inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-red-700 rounded-lg">
-                    <FileX className="w-6 h-6 mr-2"/>
+                    onClick={onStatusClick}
+                    className="inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-red-500 rounded-lg">
+                    <FileX className="w-6 h-6 mr-2" />
                     Revisi
                 </div>
             );
         } else if (status === 'diterima') {
             return (
                 <div
-                    className="inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-green-600 rounded-lg">
-                    <ListChecks className="w-6 h-6 mr-2"/>
+                    onClick={onStatusClick}
+                    className="inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-green-500 rounded-lg">
+                    <ListChecks className="w-6 h-6 mr-2" />
                     Diterima
                 </div>
             );
@@ -23,7 +25,7 @@ const CardPersyaratan = ({number, date, status}) => {
             return (
                 <div
                     className="inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-yellow-500 rounded-lg">
-                    <Loader className="w-6 h-6 mr-2"/>
+                    <Loader className="w-6 h-6 mr-2" />
                     Menunggu
                 </div>
             );
@@ -44,19 +46,16 @@ const CardPersyaratan = ({number, date, status}) => {
                 </div>
                 <div className="flex gap-3">
                     {getStatusButton()}
-                    <a href="#"
-                       className="inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    <button
+                        onClick={onStatusClick}
+                        className="inline-flex items-center px-3 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-700">
                         View
-                        <svg className="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
-                             xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                            <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
-                                  d="M1 5h12m0 0L9 1m4 4L9 9"/>
-                        </svg>
-                    </a>
+                        <MoveRight className="w-4 h-4 ms-2" />
+                    </button>
                 </div>
             </div>
         </div>
     );
 };
 
-export default CardPersyaratan;
+export default CardUpload;
