@@ -1,9 +1,9 @@
 import {useState} from "react";
-import Upload from './UploadForm.jsx';
+import Upload from '../UploadForm.jsx';
 import {X} from 'lucide-react';
-import ModalConfirm from "./ModalConfirm.jsx";
+import ModalConfirm from "./Confirm.jsx";
 
-const ModalUploadPendaftaran = ({ isOpen, onClose }) => {
+const UploadPendaftaran = ({ isOpen, onClose }) => {
     const [showConfirmation, setShowConfirmation] = useState(false);
     const [showUploadModal, setShowUploadModal] = useState(false);
     const [formData, setFormData] = useState({
@@ -279,7 +279,7 @@ const ModalUploadPendaftaran = ({ isOpen, onClose }) => {
                             type="submit"
                             className="w-full px-4 py-2 text-sm font-medium text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300"
                         >
-                            Lanjutkan ke Upload Dokumen
+                            Lanjut
                         </button>
                     </div>
                 </form>
@@ -288,4 +288,4 @@ const ModalUploadPendaftaran = ({ isOpen, onClose }) => {
     );
 };
 
-export default ModalUploadPendaftaran;
+export default UploadPendaftaran;
