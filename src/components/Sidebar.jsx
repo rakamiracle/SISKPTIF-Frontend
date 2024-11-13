@@ -27,7 +27,7 @@ const Sidebar = ({isOpen}) => {
             icon: <FileInput className="w-5 h-5"/>,
         }, {
             title: "Pasca Seminar",
-            path: "/mahasiswa/pascaSeminar",
+            path: "/mahasiswa/pasca-seminar",
             icon: <FileCheck2 className="w-5 h-5"/>,
         },
         {
@@ -72,7 +72,7 @@ const Sidebar = ({isOpen}) => {
                             <CircleUserRound className="rounded-full w-10 h-10 mr-2"/>
                             <div>
                                 <h3 className="font-medium">Gilang Ramadhan Indra</h3>
-                                <p className="text-sm text-gray-400">12250111323@students.uin-suska.ac.id</p>
+                                <p className="text-sm text-gray-400">12250111323</p>
                             </div>
                         </Link>
                     </div>
