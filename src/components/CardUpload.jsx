@@ -1,14 +1,14 @@
 import React from 'react';
-import { ListChecks, Loader, FileX, MoveRight } from 'lucide-react';
+import {ListChecks, Loader, FileX, MoveRight} from 'lucide-react';
 
-const CardUpload = ({ number, date, status, onStatusClick }) => {
+const CardUpload = ({number, date, status, onStatusClick}) => {
     const getStatusButton = () => {
         if (status === 'revisi') {
             return (
                 <div
                     onClick={onStatusClick}
                     className="inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-red-500 rounded-lg">
-                    <FileX className="w-6 h-6 mr-2" />
+                    <FileX className="w-6 h-6 mr-2"/>
                     Revisi
                 </div>
             );
@@ -17,7 +17,7 @@ const CardUpload = ({ number, date, status, onStatusClick }) => {
                 <div
                     onClick={onStatusClick}
                     className="inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-green-500 rounded-lg">
-                    <ListChecks className="w-6 h-6 mr-2" />
+                    <ListChecks className="w-6 h-6 mr-2"/>
                     Diterima
                 </div>
             );
@@ -25,7 +25,7 @@ const CardUpload = ({ number, date, status, onStatusClick }) => {
             return (
                 <div
                     className="inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-yellow-500 rounded-lg">
-                    <Loader className="w-6 h-6 mr-2" />
+                    <Loader className="w-6 h-6 mr-2"/>
                     Menunggu
                 </div>
             );
@@ -48,9 +48,14 @@ const CardUpload = ({ number, date, status, onStatusClick }) => {
                     {getStatusButton()}
                     <button
                         onClick={onStatusClick}
-                        className="inline-flex items-center px-3 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-700">
+                        disabled={status === "menunggu"}
+                        className={`inline-flex items-center px-3 py-2 text-sm font-medium rounded-lg ${
+                            status === 'menunggu'
+                                ? 'bg-gray-300 text-gray-500 dark:bg-gray-700 dark:text-gray-400'
+                                : 'text-gray-900 bg-white border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-700'
+                        }`}>
                         View
-                        <MoveRight className="w-4 h-4 ms-2" />
+                        <MoveRight className="w-4 h-4 ms-2"/>
                     </button>
                 </div>
             </div>
