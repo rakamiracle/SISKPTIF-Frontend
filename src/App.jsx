@@ -5,7 +5,7 @@ import LandingPage from "./pages/LandingPages";
 import Pendaftaran from "./pages/mahasiswa/Pendaftaran";
 import Status from "../src/pages/mahasiswa/Status";
 import NotFound from "../src/pages/NotFound";
-import DashboardLayoutMahasiswa from "./components/DashboardLayoutMahasiswa";
+import DashboardLayoutMahasiswa from "./components/DashboardLayout.jsx";
 import Persyaratan from "./pages/mahasiswa/Persyaratan";
 import PascaSeminar from "./pages/mahasiswa/PascaSeminar.jsx";
 import DashboardInstansi from "./pages/instansi/Dashboard.jsx"
