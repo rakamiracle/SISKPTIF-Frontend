@@ -1,5 +1,5 @@
 import React from "react";
-import {PenLine} from 'lucide-react'
+import {PenLine,ChevronRight} from 'lucide-react'
 
 const Card = ({ title, description }) => {
   return (
@@ -11,7 +11,9 @@ const Card = ({ title, description }) => {
         <h3 className="font-bold">{title}</h3>
       </div>
       <p className="text-gray-600 text-sm mb-4">{description}</p>
-      <button className="text-black-400 font-bold">Details &gt;</button>
+        <button className="text-black-400 font-bold flex items-center gap-1">
+            Details<ChevronRight className="w-4 h-4"/>
+        </button>
     </div>
   );
 };
