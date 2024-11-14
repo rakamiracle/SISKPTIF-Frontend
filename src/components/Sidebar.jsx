@@ -1,41 +1,10 @@
 import {Link} from "react-router-dom";
 import {
-    LayoutDashboard,
-    FileInput,
-    FileSearch,
-    CircleUserRound,
-    BadgeCheck,
-    FileCheck2,
+    CircleUser,
     LogOut
 } from "lucide-react";
 
-const Sidebar = ({isOpen}) => {
-    const menuItems = [
-        {
-            title: "Dashboard",
-            path: "/mahasiswa/dashboard",
-            icon: <LayoutDashboard className="w-5 h-5"/>,
-        },
-        {
-            title: "Persyaratan",
-            path: "/mahasiswa/persyaratan",
-            icon: <FileSearch className="w-5 h-5"/>,
-        },
-        {
-            title: "Pendaftaran",
-            path: "/mahasiswa/pendaftaran",
-            icon: <FileInput className="w-5 h-5"/>,
-        }, {
-            title: "Pasca Seminar",
-            path: "/mahasiswa/pasca-seminar",
-            icon: <FileCheck2 className="w-5 h-5"/>,
-        },
-        {
-            title: "Status",
-            path: "/mahasiswa/status",
-            icon: <BadgeCheck className="w-5 h-5"/>,
-        },
-    ];
+const Sidebar = ({isOpen, menuItems, userData, role}) => {
 
     return (
         <div
@@ -66,13 +35,12 @@ const Sidebar = ({isOpen}) => {
                         <LogOut className="h-5 w-5 mr-2"/>
                         <span className="font-medium">Logout</span>
                     </Link>
-                    {/* User */}
                     <div className="flex items-center bg-gray-100 dark:bg-gray-700 rounded-lg px-3 py-2 mt-auto">
-                        <Link to="/mahasiswa/profile" className="flex items-center w-full">
-                            <CircleUserRound className="rounded-full w-10 h-10 mr-2"/>
+                        <Link to={`/${role}/profile`} className="flex items-center w-full">
+                            <CircleUser className="rounded-full w-10 h-10 mr-2"/>
                             <div>
-                                <h3 className="font-medium">Gilang Ramadhan Indra</h3>
-                                <p className="text-sm text-gray-400">12250111323</p>
+                                <h3 className="font-medium">{userData?.name || "User Name"}</h3>
+                                <p className="text-sm text-gray-400">{userData?.id || "ID"}</p>
                             </div>
                         </Link>
                     </div>
