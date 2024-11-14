@@ -72,13 +72,13 @@ const Dashboard = () => {
                                 <p className="text-gray-600">NIM: {student.nim}</p>
                                 <p className="text-gray-600">Jurusan: {student.department}</p>
                                 <div className="mt-2">
-                  <span
-                      className={`px-3 py-1 rounded-full text-white text-sm ${
-                          student.status === "Aktif" ? "bg-green-500" : "bg-gray-500"
-                      }`}
-                  >
-                    {student.status}
-                  </span>
+                                    <span
+                                        className={`px-3 py-1 rounded-full text-white text-sm ${
+                                            student.status === "Aktif" ? "bg-green-500" : "bg-gray-500"
+                                        }`}
+                                    >
+                                        {student.status}
+                                    </span>
                                 </div>
                             </div>
                             <div className="mt-4">
