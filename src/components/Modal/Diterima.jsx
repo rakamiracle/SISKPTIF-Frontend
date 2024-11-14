@@ -22,7 +22,7 @@ const Diterima = ({title, text, textButton, isOpen, onClose, linkTo}) => {
                             <h2 className="text-xl font-semibold">
                                 {title}
                             </h2>
-                            <p className="text-blue-500 font-semibold mt-2 underline">
+                            <p className="text-black-500 font-semibold mt-2 underline">
                                 Diterima!
                             </p>
                         </div>
