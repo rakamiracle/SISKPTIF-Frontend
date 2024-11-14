@@ -7,14 +7,14 @@ const UploadPendaftaran = ({ isOpen, onClose }) => {
     const [showConfirmation, setShowConfirmation] = useState(false);
     const [showUploadModal, setShowUploadModal] = useState(false);
     const [formData, setFormData] = useState({
+        judulKp:'',
         namaInstansi: '',
         alamatInstansi: '',
         tanggalMulai: '',
         tanggalSelesai: '',
         pembimbingInstansi: '',
         nomorTelepon: '',
-        emailPembimbing: '',
-        bidangKP: ''
+        emailPembimbing: ''
     });
 
     const documents = [
@@ -136,7 +136,7 @@ const UploadPendaftaran = ({ isOpen, onClose }) => {
                 <div className="p-4 border-b border-gray-200 dark:border-gray-700">
                     <div className="flex justify-between items-center">
                         <h2 className="text-xl font-semibold text-gray-900 dark:text-white">
-                            Form Pengajuan KP
+                            Form Pendaftaran Diseminasi Kerja Praktik
                         </h2>
                         <button
                             onClick={onClose}
@@ -151,6 +151,20 @@ const UploadPendaftaran = ({ isOpen, onClose }) => {
 
                 <form onSubmit={handleSubmit} className="p-6">
                     <div className="space-y-4">
+                        <div>
+                            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                                Judul Laporan
+                            </label>
+                            <input
+                                type="text"
+                                name="judulKp"
+                                value={formData.judulKp}
+                                onChange={handleChange}
+                                className="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-md"
+                                required
+                            />
+                        </div>
+
                         <div>
                             <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                                 Nama Instansi
@@ -249,27 +263,6 @@ const UploadPendaftaran = ({ isOpen, onClose }) => {
                                     required
                                 />
                             </div>
-                        </div>
-
-                        <div>
-                            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                                Bidang KP
-                            </label>
-                            <select
-                                name="bidangKP"
-                                value={formData.bidangKP}
-                                onChange={handleChange}
-                                className="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-md"
-                                required
-                            >
-                                <option value="">Pilih Bidang KP</option>
-                                <option value="web">Web Development</option>
-                                <option value="mobile">Mobile Development</option>
-                                <option value="network">Computer Network</option>
-                                <option value="database">Database Management</option>
-                                <option value="ai">Artificial Intelligence</option>
-                                <option value="other">Lainnya</option>
-                            </select>
                         </div>
                     </div>
 
